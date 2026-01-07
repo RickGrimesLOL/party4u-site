@@ -7,38 +7,73 @@
     <style>
       /* Body stil */
       body {
+        margin: 0;
+        font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        background: linear-gradient(to right, #001f3f, #0074D9);
+        overflow: hidden;
         text-align: center;
-        background: linear-gradient(to right, #ffe4b5, #ffb347); /* lep gradijent pozadine */
-        font-family: 'Arial', sans-serif;
-        margin: 0;
       }
 
       /* Link stil */
       a {
-        font-size: 6vw; /* prilagodljivo veličini ekrana */
+        font-size: 6vw;
         font-weight: bold;
         text-decoration: none;
-        color: #d32f2f;
+        color: #ffffff;
         padding: 20px;
-        border: 3px solid #d32f2f;
+        border: 3px solid #ffffff;
         border-radius: 15px;
-        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1.5s forwards;
+        z-index: 2;
+        position: relative;
       }
 
       a:hover {
-        color: #f57c00;
-        border-color: #f57c00;
+        color: #0074D9;
+        background-color: #ffffff;
+        border-color: #ffffff;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Baloni odozdo nagore */
+      .balloon {
+        position: absolute;
+        bottom: -50px;
+        font-size: 24px;
+        opacity: 0.8;
+        animation: rise 5s linear infinite;
+      }
+
+      @keyframes rise {
+        to {
+          transform: translateY(-110vh) rotate(360deg);
+        }
       }
     </style>
   </head>
   <body>
-    <a href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=9b2dc2d99e0648de&pt=c2753c9d473e74263d7e196fb4fb3b4c">
-      🎉🎵 srećan rođendan tarooo 🎵🎉<br>
+    <!-- Tekst i link -->
+    <a href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=1f1e4b871e414938&pt=f13c835c0534a780781821bc7914b645">
+      srecan rodjendan taro<br>klikni me
     </a>
+
+    <!-- Diskretni baloni -->
+    <div class="balloon" style="left: 10%;">🎈</div>
+    <div class="balloon" style="left: 50%; animation-delay: 1s;">🎈</div>
+    <div class="balloon" style="left: 80%; animation-delay: 2s;">🎈</div>
   </body>
 </html>
