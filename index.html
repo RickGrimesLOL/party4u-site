@@ -236,11 +236,12 @@ h2 {
     <h2>srećan rođendan taroo 🧦🤍</h2>
     <div class="subtitle">nije bas nesto al eto jejj</div>
 
-    <!-- Spotify embed for In A Good Way -->
-    <iframe src="https://open.spotify.com/embed/track/2VYnlKxB8jpbCeLUjQsebc"
-      width="300" height="80" frameborder="0"
-      allowtransparency="true" allow="encrypted-media"></iframe>
-    <!-- ovo je embed za Faye Webster - In A Good Way sa Spotify‑a :contentReference[oaicite:1]{index=1} -->
+    <!-- Your original playlist button -->
+    <a class="music-btn"
+       href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=3a31a47efc2a4461&pt=4d46f773275f7dce5bd507f6ca000c14"
+       target="_blank">
+       klikni za pravi poklon
+    </a>
 
     <div class="images">
       <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg">
@@ -248,6 +249,12 @@ h2 {
       <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg">
       <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg">
     </div>
+
+    <!-- Spotify embed for "Ona" by Joker Out -->
+    <iframe src="https://open.spotify.com/embed/track/5VrlpW0XktFvPj1J91rBq9"
+      width="300" height="80" frameborder="0"
+      allowtransparency="true" allow="encrypted-media"
+      style="margin-top:20px;"></iframe>
 
     <div class="bottom-text">
       nisam imao neke dobre slike oprosti lol
@@ -288,7 +295,7 @@ musicToggle.onclick = () => {
     musicToggle.textContent = '🔇';
     musicPlaying = false;
   } else {
-    iframe.src = "https://open.spotify.com/embed/track/2VYnlKxB8jpbCeLUjQsebc";
+    iframe.src = "https://open.spotify.com/embed/track/5VrlpW0XktFvPj1J91rBq9";
     musicToggle.textContent = '🔊';
     musicPlaying = true;
   }
