@@ -196,21 +196,6 @@ h2 {
   from {transform:translateY(0)}
   to {transform:translateY(-120vh)}
 }
-
-/* music toggle */
-#music-toggle {
-  position: fixed;
-  bottom: 22px;
-  right: 22px;
-  padding: 10px 14px;
-  border-radius: 22px;
-  border: 2px solid white;
-  background: rgba(0,0,0,0.3);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 999;
-}
 </style>
 </head>
 
@@ -236,7 +221,7 @@ h2 {
     <h2>srećan rođendan taroo 🧦🤍</h2>
     <div class="subtitle">nije bas nesto al eto jejj</div>
 
-    <!-- Your original playlist button -->
+    <!-- Spotify playlist link remains -->
     <a class="music-btn"
        href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=3a31a47efc2a4461&pt=4d46f773275f7dce5bd507f6ca000c14"
        target="_blank">
@@ -249,12 +234,6 @@ h2 {
       <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg">
       <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg">
     </div>
-
-    <!-- Spotify embed for "Ona" by Joker Out -->
-    <iframe src="https://open.spotify.com/embed/track/5VrlpW0XktFvPj1J91rBq9"
-      width="300" height="80" frameborder="0"
-      allowtransparency="true" allow="encrypted-media"
-      style="margin-top:20px;"></iframe>
 
     <div class="bottom-text">
       nisam imao neke dobre slike oprosti lol
@@ -276,30 +255,12 @@ h2 {
 <div class="heart" style="left:70%;animation-delay:6s">❤️</div>
 <div class="heart" style="left:90%;animation-delay:8s">❤️</div>
 
-<button id="music-toggle">🔊</button>
-
 <script>
 function openSite(){
   document.getElementById('intro').style.display = 'none';
   document.getElementById('content').style.display = 'flex';
   window.scrollTo({top:0, behavior:'smooth'});
 }
-
-const musicToggle = document.getElementById('music-toggle');
-let musicPlaying = true;
-
-musicToggle.onclick = () => {
-  const iframe = document.querySelector('iframe');
-  if(musicPlaying){
-    iframe.src = '';
-    musicToggle.textContent = '🔇';
-    musicPlaying = false;
-  } else {
-    iframe.src = "https://open.spotify.com/embed/track/5VrlpW0XktFvPj1J91rBq9";
-    musicToggle.textContent = '🔊';
-    musicPlaying = true;
-  }
-};
 
 window.addEventListener('scroll', () => {
   const secret = document.getElementById('secret');
