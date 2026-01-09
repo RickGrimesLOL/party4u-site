@@ -8,194 +8,208 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  min-height:100vh;
-  background:linear-gradient(270deg,#001f3f,#0074D9,#00aaff,#001f3f);
-  background-size:800% 800%;
-  animation:bg 20s ease infinite;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  overflow-x:hidden;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  color:white;
-  padding:40px 0;
-  position:relative;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(270deg, #001f3f, #0074D9, #00aaff, #001f3f);
+  background-size: 800% 800%;
+  animation: bg 20s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  color: white;
+  padding: 40px 0;
+  position: relative;
 }
 
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+@keyframes bg {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
 }
 
 /* INTRO */
-#intro{
-  text-align:center;
-  animation:fadeIn 1.5s ease forwards;
-  margin-top:80px;
+#intro {
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+  margin-top: 80px;
 }
 
-#intro h1{
-  font-size:clamp(26px,6vw,34px);
-  margin-bottom:10px;
+#intro h1 {
+  font-size: clamp(26px, 6vw, 34px);
+  margin-bottom: 10px;
 }
 
-#intro p{
-  opacity:.85;
-  font-size:14px;
-  margin-bottom:20px;
+#intro p {
+  opacity: .85;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-.intro-image{
-  width:140px;
-  height:140px;
-  object-fit:cover;
-  border-radius:22px;
-  border:4px solid white;
-  margin:20px auto 30px;
-  display:block;
+.intro-image {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 4px solid white;
+  margin: 20px auto 30px;
+  display: block;
   box-shadow:
     0 0 25px rgba(255,255,255,0.35),
     0 0 60px rgba(0,170,255,0.35);
 }
 
-#intro button{
-  background:none;
-  border:2px solid white;
-  color:white;
-  padding:14px 32px;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-  transition:.3s;
+#intro button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
 }
 
-#intro button:hover{
-  background:white;
-  color:#0074D9;
+#intro button:hover {
+  background: white;
+  color: #0074D9;
 }
 
 /* CONTENT */
-#content{
-  display:none;
-  animation:fadeUp 1.2s ease forwards;
-  width:100%;
-  justify-content:center;
+#content {
+  display: none;
+  animation: fadeUp 1.2s ease forwards;
+  width: 100%;
+  justify-content: center;
 }
 
-.card{
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(14px);
-  border-radius:25px;
-  padding:30px 25px 40px;
-  max-width:420px;
-  width:90%;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(0,0,0,.35);
+.card {
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(14px);
+  border-radius: 25px;
+  padding: 30px 25px 40px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
 }
 
-h2{
-  margin-bottom:8px;
+h2 {
+  margin-bottom: 8px;
 }
 
-.subtitle{
-  font-size:14px;
-  opacity:.85;
-  margin-bottom:25px;
-  font-style:italic;
+.subtitle {
+  font-size: 14px;
+  opacity: .85;
+  margin-bottom: 25px;
+  font-style: italic;
 }
 
-.music-btn{
-  display:inline-block;
-  margin-bottom:30px;
-  padding:14px 30px;
-  border-radius:30px;
-  border:2px solid #ff5ec4;
-  color:white;
-  text-decoration:none;
-  box-shadow:0 0 25px #ff5ec4;
-  transition:.3s;
+.music-btn {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: 2px solid #ff5ec4;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 25px #ff5ec4;
+  transition: .3s;
 }
 
-.music-btn:hover{
-  background:#ff5ec4;
+.music-btn:hover {
+  background: #ff5ec4;
 }
 
-.images{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
+.images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
-.images img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:18px;
-  border:3px solid white;
+.images img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid white;
   box-shadow:
     0 8px 25px rgba(0,0,0,0.35),
     0 0 20px rgba(255,255,255,0.15);
-  transition:transform .3s ease, box-shadow .3s ease;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.images img:hover{
-  transform:scale(1.04);
+.images img:hover {
+  transform: scale(1.04);
   box-shadow:
     0 12px 35px rgba(0,0,0,0.45),
     0 0 30px rgba(255,255,255,0.35);
 }
 
-.images img:nth-child(2){transform:rotate(-3deg)}
-.images img:nth-child(3){transform:rotate(2deg)}
+.images img:nth-child(2) {transform: rotate(-3deg)}
+.images img:nth-child(3) {transform: rotate(2deg)}
 
-.bottom-text{
-  margin-top:20px;
-  font-size:12px;
-  opacity:.75;
+.bottom-text {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: .75;
 }
 
-/* SECRET MESSAGE */
-.secret{
-  margin-top:40px;
-  font-size:13px;
-  opacity:0;
-  transition:opacity 1.5s ease;
-  line-height:1.5;
-  font-style:italic;
+.secret {
+  margin-top: 40px;
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  line-height: 1.5;
+  font-style: italic;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
 }
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
+
+@keyframes fadeUp {
+  from {opacity:0;transform:translateY(30px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
 /* HEARTS */
-.heart{
-  position:absolute;
-  bottom:-40px;
-  font-size:24px;
-  opacity:.7;
-  animation:rise 10s linear infinite;
-  pointer-events:none;
+.heart {
+  position: absolute;
+  bottom: -40px;
+  font-size: 24px;
+  opacity: .7;
+  animation: rise 10s linear infinite;
+  pointer-events: none;
 }
 
-@keyframes rise{
-  from{transform:translateY(0)}
-  to{transform:translateY(-120vh)}
+@keyframes rise {
+  from {transform:translateY(0)}
+  to {transform:translateY(-120vh)}
+}
+
+/* music toggle */
+#music-toggle {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  padding: 10px 14px;
+  border-radius: 22px;
+  border: 2px solid white;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 999;
 }
 </style>
 </head>
@@ -206,7 +220,7 @@ h2{
   <h1>taro</h1>
   <p>
     hvala ti za sve <br>
-    sve godine sto smo pricali si mi ulepsala lol &lt;3
+    jako si mi ulepsala zivot od 2024 &lt;3
   </p>
 
   <img
@@ -222,11 +236,11 @@ h2{
     <h2>srećan rođendan taroo 🧦🤍</h2>
     <div class="subtitle">nije bas nesto al eto jejj</div>
 
-    <a
-      class="music-btn"
-      href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO">
-      klikni za pravi poklon
-    </a>
+    <!-- Spotify embed for In A Good Way -->
+    <iframe src="https://open.spotify.com/embed/track/2VYnlKxB8jpbCeLUjQsebc"
+      width="300" height="80" frameborder="0"
+      allowtransparency="true" allow="encrypted-media"></iframe>
+    <!-- ovo je embed za Faye Webster - In A Good Way sa Spotify‑a :contentReference[oaicite:1]{index=1} -->
 
     <div class="images">
       <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg">
@@ -240,28 +254,45 @@ h2{
     </div>
 
     <div class="secret" id="secret">
-      taro iskreno jako mie glupo sto smo samo odjednom prestali da pricamo
-      mislim kao pre i to i znam razlog i jako se kajem za sve.
+      taro iskreno jako mi glupo sto smo samo odjednom prestali da pricamo
+      mislim kao pre i to i znam razlog i jako se kajem za sve,
       ovo je na neki nacin i poklon i neko izvinjenje jer ne mogu da
-      prestanem da razmisljam o tome pa eto srecan rodjendan sve najboljee 
+      prestanem da razmisljam o tome i srecan rodjendan
     </div>
 
   </div>
 </div>
 
-<!-- hearts -->
 <div class="heart" style="left:10%">❤️</div>
 <div class="heart" style="left:30%;animation-delay:2s">❤️</div>
 <div class="heart" style="left:50%;animation-delay:4s">❤️</div>
 <div class="heart" style="left:70%;animation-delay:6s">❤️</div>
 <div class="heart" style="left:90%;animation-delay:8s">❤️</div>
 
+<button id="music-toggle">🔊</button>
+
 <script>
 function openSite(){
-  document.getElementById('intro').style.display='none';
-  document.getElementById('content').style.display='flex';
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('content').style.display = 'flex';
   window.scrollTo({top:0, behavior:'smooth'});
 }
+
+const musicToggle = document.getElementById('music-toggle');
+let musicPlaying = true;
+
+musicToggle.onclick = () => {
+  const iframe = document.querySelector('iframe');
+  if(musicPlaying){
+    iframe.src = '';
+    musicToggle.textContent = '🔇';
+    musicPlaying = false;
+  } else {
+    iframe.src = "https://open.spotify.com/embed/track/2VYnlKxB8jpbCeLUjQsebc";
+    musicToggle.textContent = '🔊';
+    musicPlaying = true;
+  }
+};
 
 window.addEventListener('scroll', () => {
   const secret = document.getElementById('secret');
