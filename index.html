@@ -4,103 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>happy birthday btw</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 html { scroll-behavior: smooth; }
-body { margin: 0; font-family: 'Poppins', sans-serif; color: white; }
-
-/* ================= PRVA STRANICA ================= */
-#intro-section {
-  min-height: 100vh;
-  background: linear-gradient(270deg, #001f3f, #0074D9, #00aaff, #001f3f);
-  background-size: 800% 800%;
-  animation: bg 20s ease infinite;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 40px 20px;
-  text-align: center;
+body {
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #FFD580, #FF8C00);
+  color:white;
+  overflow-x:hidden;
+  position: relative;
 }
-@keyframes bg { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%} }
-#intro-section h1 { font-size: clamp(26px,6vw,34px); margin-bottom:10px; }
-#intro-section p { opacity:.85; font-size:14px; margin-bottom:20px; }
-.intro-image { width:140px; height:140px; object-fit:cover; border-radius:22px; border:4px solid white; margin:20px auto 30px; box-shadow:0 0 25px rgba(255,255,255,0.35),0 0 60px rgba(0,170,255,0.35); display:block; }
-#scroll-down-text { font-size:16px; opacity:0.9; margin-bottom:15px; animation: pulse 1.5s infinite; }
-@keyframes pulse { 0% {opacity:0.6; transform:translateY(0);} 50% {opacity:1; transform:translateY(5px);} 100% {opacity:0.6; transform:translateY(0);} }
-.images { display: grid; grid-template-columns: repeat(2,1fr); gap:15px; margin-top:20px; }
-.images img { width:100%; border-radius:18px; border:3px solid white; box-shadow:0 8px 25px rgba(0,0,0,0.35),0 0 20px rgba(255,255,255,0.15); transition: transform .3s ease; }
-.images img:hover { transform: scale(1.04); }
-.bottom-text { margin-top:20px; font-size:12px; opacity:.75; }
 
+/* ZVEZDICE */
+.star {
+  position:absolute;
+  font-size:28px;
+  opacity:0.7;
+  animation: rise 15s linear infinite;
+  pointer-events:none;
+}
+@keyframes rise {
+  0% { transform:translateY(100vh) rotate(0deg);}
+  100% { transform:translateY(-20vh) rotate(360deg);}
+}
 
-/* ================= DRUGA STRANICA ================= */
-#reminded-section { padding: 60px 20px; background:#111; text-align:center; color:white; }
-#reminded-section h2 { font-size:30px; margin-bottom:25px; }
-.song-row { display:flex; align-items:center; gap:20px; margin-bottom:30px; opacity:0; transform:translateY(40px); animation: fadeUp 0.7s ease forwards; }
-.song-row.reverse { flex-direction: row-reverse; }
-.song-row img { width:140px; height:140px; object-fit:cover; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,.4); transition: transform 0.3s ease; }
-.song-row img:hover { transform: scale(1.05); }
+/* INTRO */
+#intro {
+  text-align:center;
+  padding:60px 20px;
+}
+#intro h1 { font-size:clamp(30px,6vw,48px); margin-bottom:15px; }
+#intro p { font-size:16px; opacity:0.85; line-height:1.5; margin-bottom:20px; }
+#scroll-text { font-size:18px; animation: pulse 1.5s infinite; opacity:0.9; }
+@keyframes pulse { 0%{opacity:0.6;transform:translateY(0);}50%{opacity:1;transform:translateY(5px);}100%{opacity:0.6;transform:translateY(0);} }
+
+/* SLICE SECTION */
+.image-section {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  padding:40px 20px;
+}
+.image-section img {
+  width:100%;
+  border-radius:20px;
+  object-fit:cover;
+  transition: transform 0.3s;
+  box-shadow:0 8px 25px rgba(0,0,0,0.35);
+}
+.image-section img:hover { transform:scale(1.05); }
+
+/* NAIZMENICNO IZDUZENO / OBICNO */
+.img-elongated { grid-row: span 2; height:350px; }
+.img-normal { height:200px; }
+
+/* PESME */
+#songs { padding:60px 20px; text-align:center; }
+#songs h2 { font-size:32px; margin-bottom:40px; }
+.song-row {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-bottom:40px;
+  opacity:0;
+  transform:translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+.song-row.reverse { flex-direction:row-reverse; }
+.song-row img {
+  width:150px;
+  height:150px;
+  border-radius:15px;
+  object-fit:cover;
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s;
+}
+.song-row img:hover { transform:scale(1.05); }
 .song-info h3 { font-size:18px; text-align:left; }
-.playlist-button { display:inline-block; margin-top:40px; padding:14px 28px; border:2px solid #1DB954; border-radius:30px; color:white; background:#1DB954; font-size:17px; text-decoration:none; transition:0.3s; }
-.playlist-button:hover { background:#17a444; border-color:#17a444; }
-@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 
-/* ================= RESPONSIVE ================= */
+/* DUGME */
+#playlist-btn {
+  display:inline-block;
+  margin-top:40px;
+  padding:14px 30px;
+  border-radius:30px;
+  border:2px solid #1DB954;
+  color:white;
+  background:#1DB954;
+  font-size:18px;
+  text-decoration:none;
+  transition:0.3s;
+}
+#playlist-btn:hover { background:#17a444; border-color:#17a444; }
+
+/* ANIMACIJA FADE-UP */
+@keyframes fadeUp { to {opacity:1; transform:translateY(0);} }
+
+/* RESPONSIVE */
 @media (max-width:700px) {
-  .song-row { flex-direction:column; text-align:center; }
-  .song-row.reverse { flex-direction:column; }
-  .song-info h3 { margin-top:12px; }
-  .album-info p { font-size:13px; }
+  .image-section { grid-template-columns:1fr; }
+  .img-elongated, .img-normal { height:auto; }
+  .song-row, .song-row.reverse { flex-direction:column; }
+  .song-info h3 { margin-top:12px; text-align:center; }
   .song-row img { width:120px; height:120px; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- PRVA STRANICA: INTRO -->
-<section id="intro-section">
-  <h1>taro</h1>
-  <p>hvala ti za sve <br> i za sve godine sto smo pricali <br> ulepsala si ih 5 puta lol &lt;3</p>
-  <img class="intro-image" src="https://raw.githubusercontent.com/RickGrimesLOL/party4u-site/main/images%20(1).jpg" alt="intro image">
-  <div id="scroll-down-text">Skroluj dole ⬇️</div>
+<!-- ZVEZDICE -->
+<div class="star" style="left:5%;">🌟</div>
+<div class="star" style="left:25%;animation-delay:2s;">🌟</div>
+<div class="star" style="left:45%;animation-delay:4s;">🌟</div>
+<div class="star" style="left:65%;animation-delay:6s;">🌟</div>
+<div class="star" style="left:85%;animation-delay:8s;">🌟</div>
 
-  <div class="images">
-    <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg">
-    <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_230102.jpg">
-    <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg">
-    <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg">
-  </div>
-  <div class="bottom-text">nisam imao neke dobre slike oprosti lol</div>
+<!-- INTRO -->
+<section id="intro">
+  <h1>Taro</h1>
+  <p>hvala ti za sve<br>i za sve godine sto smo pricali<br>ulepsala si ih 5 puta lol &lt;3</p>
+  <div id="scroll-text">Skroluj dole ⬇️</div>
 </section>
 
-<!-- DRUGA STRANICA: ALBUMI -->
-<section id="albums-section">
-  <h2>Omiljeni albumi 🎵</h2>
-  <div class="albums-container">
-    <div class="album-card">
-      <img src="URL_DO_ALBUMA_1.jpg" alt="Album 1">
-      <div class="album-info">
-        <h3>Album 1</h3>
-        <p>Opis albuma 1...</p>
-      </div>
-    </div>
-    <div class="album-card">
-      <img src="URL_DO_ALBUMA_2.jpg" alt="Album 2">
-      <div class="album-info">
-        <h3>Album 2</h3>
-        <p>Opis albuma 2...</p>
-      </div>
-    </div>
-  </div>
-  <a id="playlist-btn" href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=3a31a47efc2a4461" target="_blank">Klikni za pravi poklon 🎁</a>
+<!-- SLIKE -->
+<section class="image-section">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg" class="img-elongated">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_230102.jpg" class="img-normal">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg" class="img-elongated">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg" class="img-normal">
 </section>
 
-<!-- TREĆA STRANICA: THIS REMINDED ME OF YOU -->
-<section id="reminded-section">
+<!-- PESME -->
+<section id="songs">
   <h2>This reminded me of you</h2>
 
   <div class="song-row">
@@ -128,8 +164,22 @@ body { margin: 0; font-family: 'Poppins', sans-serif; color: white; }
     <div class="song-info"><h3>Kafe aparat — Buč Kesidi</h3></div>
   </div>
 
-  <a class="playlist-button" href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=3a31a47efc2a4461" target="_blank">Klikni za pravi poklon 🎁</a>
+  <a id="playlist-btn" href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=3a31a47efc2a4461" target="_blank">Klikni za pravi poklon 🎁</a>
 </section>
+
+<script>
+// Fade-up on scroll
+const rows = document.querySelectorAll('.song-row');
+window.addEventListener('scroll', () => {
+  rows.forEach(row => {
+    const rect = row.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50){
+      row.style.opacity = 1;
+      row.style.transform = 'translateY(0)';
+    }
+  });
+});
+</script>
 
 </body>
 </html>
