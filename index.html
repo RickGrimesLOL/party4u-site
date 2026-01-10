@@ -3,193 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>happy birthday btw</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-html { scroll-behavior: smooth; }
-body {
-  margin:0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #FFD580, #FF8C00);
-  color:white;
-  overflow-x:hidden;
-  position: relative;
-}
+<title>Srećan rođendan 🎂</title>
 
-/* ZVEZDICE */
-.star {
-  position:absolute;
-  font-size:28px;
-  opacity:0.7;
-  animation: rise 15s linear infinite;
-  pointer-events:none;
-}
-@keyframes rise {
-  0% { transform:translateY(100vh) rotate(0deg);}
-  100% { transform:translateY(-20vh) rotate(360deg);}
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffd6a0, #f08a24);
+  color: #fff;
+  overflow-x: hidden;
 }
 
 /* INTRO */
-#intro {
-  text-align:center;
-  padding:60px 20px;
-}
-#intro h1 { font-size:clamp(30px,6vw,48px); margin-bottom:15px; }
-#intro p { font-size:16px; opacity:0.85; line-height:1.5; margin-bottom:20px; }
-#scroll-text { font-size:18px; animation: pulse 1.5s infinite; opacity:0.9; }
-@keyframes pulse { 0%{opacity:0.6;transform:translateY(0);}50%{opacity:1;transform:translateY(5px);}100%{opacity:0.6;transform:translateY(0);} }
-
-/* SLIKE */
-.image-section {
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:15px;
-  padding:40px 20px;
-}
-.image-section img {
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:18px;
-  border:3px solid white;
-  box-shadow:0 8px 25px rgba(0,0,0,0.35);
-  transition: transform 0.3s;
-}
-.image-section img:hover { transform:scale(1.04); }
-
-/* MALI SASTAV */
-#small-text {
-  text-align:center;
-  font-size:14px;
-  opacity:0.75;
-  margin-top:20px;
-  font-style:italic;
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* PESME */
-#songs { padding:60px 20px; text-align:center; }
-#songs h2 { font-size:32px; margin-bottom:40px; }
-.song-row {
-  display:flex;
-  align-items:center;
-  gap:20px;
-  margin-bottom:40px;
-  opacity:0;
-  transform:translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
+.intro h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
-.song-row.reverse { flex-direction:row-reverse; }
-.song-row img {
-  width:150px;
-  height:150px;
-  border-radius:15px;
-  object-fit:cover;
-  box-shadow:0 6px 20px rgba(0,0,0,0.35);
-  transition: transform 0.3s;
+
+.scroll-text {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  animation: pulse 1.8s infinite;
 }
-.song-row img:hover { transform:scale(1.05); }
-.song-info h3 { font-size:18px; text-align:left; }
 
-/* DUGME */
-#playlist-btn {
-  display:inline-block;
-  margin-top:40px;
-  padding:14px 30px;
-  border-radius:30px;
-  border:2px solid #1DB954;
-  color:white;
-  background:#1DB954;
-  font-size:18px;
-  text-decoration:none;
-  transition:0.3s;
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
 }
-#playlist-btn:hover { background:#17a444; border-color:#17a444; }
 
-/* ANIMACIJA FADE-UP */
-@keyframes fadeUp { to {opacity:1; transform:translateY(0);} }
+/* SONGS */
+.songs {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
 
-/* RESPONSIVE */
-@media (max-width:700px) {
-  .image-section { grid-template-columns:1fr; }
-  .song-row, .song-row.reverse { flex-direction:column; }
-  .song-info h3 { margin-top:12px; text-align:center; }
-  .song-row img { width:120px; height:120px; }
+.song {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.song:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.song img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.song p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .song {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .song img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* TEXT */
+.note {
+  max-width: 700px;
+  margin: 60px auto;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* BUTTON */
+.button-wrap {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.button-wrap a {
+  text-decoration: none;
+  background: #fff;
+  color: #f08a24;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-wrap a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* STARS */
+.star {
+  position: fixed;
+  bottom: -40px;
+  animation: rise linear infinite;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<!-- ZVEZDICE -->
-<div class="star" style="left:5%;">🌟</div>
-<div class="star" style="left:25%;animation-delay:2s;">🌟</div>
-<div class="star" style="left:45%;animation-delay:4s;">🌟</div>
-<div class="star" style="left:65%;animation-delay:6s;">🌟</div>
-<div class="star" style="left:85%;animation-delay:8s;">🌟</div>
-
-<!-- INTRO -->
-<section id="intro">
-  <h1>Taro</h1>
-  <p>hvala ti za sve<br>i za sve godine sto smo pricali<br>ulepsala si ih 5 puta lol &lt;3</p>
-  <div id="scroll-text">Skroluj dole ⬇️</div>
-</section>
-
-<!-- SLIKE -->
-<section class="image-section">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_230102.jpg">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg">
-</section>
-
-<!-- MALI SASTAV -->
-<div id="small-text">
-  oprosti nisam imao dobre slike lol
+<div class="intro">
+  <h1>💛 Srećan rođendan 💛</h1>
+  <div class="scroll-text">skroluj dole ⬇️</div>
 </div>
 
-<!-- PESME -->
-<section id="songs">
-  <h2>This reminded me of you</h2>
+<div class="songs">
 
-  <div class="song-row">
-    <img src="https://i.scdn.co/image/ab67616d0000b27300fc4a629a9ca10b55ce82ae" alt="Good Luck, Babe! Cover">
-    <div class="song-info"><h3>Good Luck, Babe! — Chappell Roan</h3></div>
+  <div class="song">
+    <img src="2dcdc8ffb20ffef584eaa13f1afbe28a">
+    <p><b>Good Luck, Babe!</b><br>Chappell Roan</p>
   </div>
 
-  <div class="song-row reverse">
-    <img src="https://i.scdn.co/image/ab67616d0000b273d0c0e1e6de08b7ccc6c4c835" alt="Ona Cover">
-    <div class="song-info"><h3>Ona — Joker Out</h3></div>
+  <div class="song">
+    <img src="ab67616d0000b2732858e063e669309b6645e23f.jpeg">
+    <p><b>Ona</b><br>Joker Out</p>
   </div>
 
-  <div class="song-row">
-    <img src="https://i.scdn.co/image/ab67616d0000b2734d1bcee3a7210c09a6d481f0" alt="Bože brani je od zla Cover">
-    <div class="song-info"><h3>Bože brani je od zla — Toše Proeski</h3></div>
+  <div class="song">
+    <img src="9ab2cabb1157200ad2e3c98d91224887.1000x1000x1">
+    <p><b>Bože, brani je od zla</b><br>Toše Proeski</p>
   </div>
 
-  <div class="song-row reverse">
-    <img src="https://i.scdn.co/image/ab67616d0000b273bc56d6df6c38e2ae7a3e3640" alt="That’s So True Cover">
-    <div class="song-info"><h3>That’s So True — Gracie Abrams</h3></div>
+  <div class="song">
+    <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/images (11)_32205577203938.jpeg">
+    <p><b>That’s So True</b><br>Gracie Abrams</p>
   </div>
 
-  <div class="song-row">
-    <img src="https://i.scdn.co/image/ab67616d0000b2733ec57ab15a6f99cb40dfb98a" alt="Kafe aparat Cover">
-    <div class="song-info"><h3>Kafe aparat — Buč Kesidi</h3></div>
+  <div class="song">
+    <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/images (18)_32205645162272.jpeg">
+    <p><b>Kafe aparat</b><br>Buč Kesidi</p>
   </div>
 
-  <a id="playlist-btn" href="https://open.spotify.com/playlist/5p9Qc3sSzEtqGpAKPMD4bO?si=3a31a47efc2a4461" target="_blank">Klikni za pravi poklon 🎁</a>
-</section>
+</div>
+
+<div class="note">
+  <p>
+    this reminded me of you  
+    <br><br>
+    oprosti nisam znao koje slike da stavim lol
+    <br><br>
+    taro iskreno jako mi je glupo što smo samo odjednom prestali da pričamo,  
+    mislim kao pre i to i znam razlog i jako se kajem za sve.  
+    ovo je na neki način i poklon i neko izvinjenje jer ne mogu da prestanem  
+    da razmišljam o tome pa eto srećan rođendan, sve najbolje i uživaj 💕
+  </p>
+</div>
+
+<div class="button-wrap">
+  <a href="https://open.spotify.com/" target="_blank">
+    klikni ovde za pravi poklon 🎁
+  </a>
+</div>
 
 <script>
-// Fade-up on scroll
-const rows = document.querySelectorAll('.song-row');
-window.addEventListener('scroll', () => {
-  rows.forEach(row => {
-    const rect = row.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 50){
-      row.style.opacity = 1;
-      row.style.transform = 'translateY(0)';
-    }
-  });
-});
+function createStar() {
+  const star = document.createElement("div");
+  star.classList.add("star");
+  star.textContent = "🌟";
+
+  star.style.left = Math.random() * 100 + "vw";
+  star.style.animationDuration = (10 + Math.random() * 10) + "s";
+  star.style.fontSize = (20 + Math.random() * 16) + "px";
+
+  document.body.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 20000);
+}
+
+setInterval(createStar, 800);
 </script>
 
 </body>
