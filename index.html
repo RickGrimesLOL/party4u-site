@@ -39,25 +39,32 @@ body {
 #scroll-text { font-size:18px; animation: pulse 1.5s infinite; opacity:0.9; }
 @keyframes pulse { 0%{opacity:0.6;transform:translateY(0);}50%{opacity:1;transform:translateY(5px);}100%{opacity:0.6;transform:translateY(0);} }
 
-/* SLICE SECTION */
+/* SLIKE */
 .image-section {
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns: repeat(2,1fr);
   gap:15px;
   padding:40px 20px;
 }
 .image-section img {
   width:100%;
-  border-radius:20px;
+  aspect-ratio:1/1;
   object-fit:cover;
-  transition: transform 0.3s;
+  border-radius:18px;
+  border:3px solid white;
   box-shadow:0 8px 25px rgba(0,0,0,0.35);
+  transition: transform 0.3s;
 }
-.image-section img:hover { transform:scale(1.05); }
+.image-section img:hover { transform:scale(1.04); }
 
-/* NAIZMENICNO IZDUZENO / OBICNO */
-.img-elongated { grid-row: span 2; height:350px; }
-.img-normal { height:200px; }
+/* MALI SASTAV */
+#small-text {
+  text-align:center;
+  font-size:14px;
+  opacity:0.75;
+  margin-top:20px;
+  font-style:italic;
+}
 
 /* PESME */
 #songs { padding:60px 20px; text-align:center; }
@@ -104,7 +111,6 @@ body {
 /* RESPONSIVE */
 @media (max-width:700px) {
   .image-section { grid-template-columns:1fr; }
-  .img-elongated, .img-normal { height:auto; }
   .song-row, .song-row.reverse { flex-direction:column; }
   .song-info h3 { margin-top:12px; text-align:center; }
   .song-row img { width:120px; height:120px; }
@@ -129,11 +135,16 @@ body {
 
 <!-- SLIKE -->
 <section class="image-section">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg" class="img-elongated">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_230102.jpg" class="img-normal">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg" class="img-elongated">
-  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg" class="img-normal">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/IMG-20250906-WA0007.jpeg">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_230102.jpg">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232148.jpg">
+  <img src="https://raw.githubusercontent.com/RickGrimesLOL/happybirthdaybtw-site/main/Screenshot_20260107_232003.jpg">
 </section>
+
+<!-- MALI SASTAV -->
+<div id="small-text">
+  oprosti nisam imao dobre slike lol
+</div>
 
 <!-- PESME -->
 <section id="songs">
