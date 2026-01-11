@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>samozataru</title>
+<title>Samo za Taru</title>
 
 <style>
 body {
@@ -16,30 +16,31 @@ body {
 
 /* INTRO */
 .intro {
-  min-height: 100vh;
+  min-height: 90vh; /* manje od 100vh za bolje prikazivanje slike */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 .intro img {
   width: 180px;
   max-width: 70%;
   height: auto;
+  object-fit: contain; /* bolje skalira sliku */
   border-radius: 16px;
-  margin-bottom: 8px; /* smaller space */
+  margin-bottom: 8px;
 }
 
 .intro h1 {
   font-size: 3rem;
-  margin-bottom: 6px; /* smaller space */
+  margin-bottom: 6px;
 }
 
 .scroll-text {
-  margin-top: 4px; /* smaller space below image */
+  margin-top: 4px;
   font-size: 1.2rem;
   opacity: 0.8;
   animation: pulse 1.8s infinite;
@@ -210,6 +211,16 @@ body {
 <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 <script>
   twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+</script>
+
+<!-- Auto scroll a bit on load for mobile -->
+<script>
+  window.addEventListener('load', () => {
+    window.scrollTo({
+      top: 0, // možeš povećati broj ako želiš da se skroluje više
+      behavior: 'smooth'
+    });
+  });
 </script>
 
 <script>
